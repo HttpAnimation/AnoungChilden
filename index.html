@@ -33,6 +33,17 @@
       document.body.style.backgroundColor = getRandomColor();
     }, 1);
 
+    // Function to continuously rotate the photo
+    function continuouslyRotate() {
+      var photo = document.getElementById("spinningPhoto");
+      photo.style.transform += "rotate(1deg)";
+      setTimeout(continuouslyRotate, 10); // Adjust the rotation speed by changing the timeout value
+    }
+
+    // Start continuously rotating the photo
+    continuouslyRotate();
+
+    // Function to start audio, change the photo, and spin on click
     function startAudioAndSpin() {
       var audio = document.getElementById("backgroundAudio");
       var photo = document.getElementById("spinningPhoto");
@@ -47,6 +58,7 @@
       photo.style.transform += "rotate(360deg)";
     }
 
+    // Function to get a random color
     function getRandomColor() {
       var letters = "0123456789ABCDEF";
       var color = "#";

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    img {
+      cursor: pointer;
+      transition: transform 1s;
+    }
+  </style>
+  <title>Spinning Photo</title>
+</head>
+<body>
+  <img id="spinningPhoto" src="5a358fcf117082.4655899015134596630714.png" width="60" alt="Spinning Photo" onclick="startAudioAndSpin()">
+  <audio id="backgroundAudio">
+    <source src="Cosmodore_-_SUSUSUSUSUUSUSUS.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+  <script>
+    // Start the color-changing interval immediately
+    setInterval(function() {
+      document.body.style.backgroundColor = getRandomColor();
+    }, 1);
+
+    function startAudioAndSpin() {
+      var audio = document.getElementById("backgroundAudio");
+      var photo = document.getElementById("spinningPhoto");
+
+      // Change the photo source
+      photo.src = "among-us-twerk.gif"; // Replace "new_photo.jpg" with the path to your new photo
+
+      // Start playing the audio
+      audio.play();
+
+      // Spin the photo
+      photo.style.transform += "rotate(360deg)";
+    }
+
+    function getRandomColor() {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>
